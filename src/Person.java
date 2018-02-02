@@ -3,6 +3,8 @@ public class Person {
 	
 	private String name;
 	private int salary;
+	private String companyName;
+	private String jobTitle;
 	private ArrayList<String> projects;
 	
 	public Person()
@@ -12,6 +14,8 @@ public class Person {
 	public Person() {
 		name = "Soham Dasgupta";
 		salary = 25000;
+		companyName = "a company";
+		jobTitle = "a title";
 		projects = new ArrayList<String>();
 		projects.add("Finished the car factory report summary.");
 		address = "1234 Butter Way, Brookfield, WI, 53045";
@@ -35,5 +39,9 @@ public class Person {
 		
 		return summ;
 	}
+	public String nameTag() {
+		return "Company name: " + companyName + "\nJob title: " + jobTitle;
+	}
+	
 
 }
