@@ -2,7 +2,7 @@
 public class Schedule {
 	private String[] schedule;
 
-	public void Schedule() {
+	public Schedule() {
 		schedule = new String[5];
 		schedule[0] = "John";
 		schedule[1] = "Boss";
@@ -11,7 +11,7 @@ public class Schedule {
 		schedule[4] = "Allison";
 	}
 	
-	public String scheduledMeetings() {
+	public String mySchedule() {
 		return schedule[0] + "\n" +  schedule[1] + "\n" + schedule[2] + "\n" + schedule[3] + "\n" + schedule[4];
 	}
 }
