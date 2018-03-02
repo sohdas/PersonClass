@@ -3,45 +3,52 @@ public class Person {
 	
 	private String name;
 	private int salary;
-	private String companyName;
-	private String jobTitle;
-	private ArrayList<String> projects;
 	
-	public Person()
-	{
-	private String address;
-
+	private Address address;
+	private Occupation occupation;
+	private Projects projects;
+	private Schedule schedule;
+	private InterestingFacts facts;
+	
 	public Person() {
+		salary = 5;
 		name = "Soham Dasgupta";
-		salary = 25000;
-		companyName = "a company";
-		jobTitle = "a title";
-		projects = new ArrayList<String>();
-		projects.add("Finished the car factory report summary.");
-		address = "1234 Butter Way, Brookfield, WI, 53045";
-	}
-
+		address = new Address();
+		occupation = new Occupation();
+		projects = new Projects();
+		schedule = new Schedule();
+		facts = new InterestingFacts();
+	}	
+	
 	public void moreMoney() {
 		salary += 1000;
 	}
-	
-	public String mailingLabel() {
-		return name + "\n" + address.substring(0, address.indexOf(",")) + "\n" + address.substring(address.indexOf(",") + 2);
-	}
-	
-	public String projectSummary()
-	{
-		String summ = "Projects List:";
-		for(int x = 0; x < projects.size(); x++)
-		{
-			summ+="\n"+projects.get(x);
-		}
-		
-		return summ;
-	}
-	public String nameTag() {
-		return "Company name: " + companyName + "\nJob title: " + jobTitle;
-	}
-	
 
+	public String getName() {
+		return name;
+	}
+	
+	public int getSalary() {
+		return salary;
+	}
+
+	public String mailingLabel() {
+		return name + "\n" + address.mailingLabel();
+	}
+	
+	public String nameTag() {
+		return occupation.nameTag();
+	}
+	
+	public String projectSummary() {
+		return projects.projectSummary();
+	}
+	
+	public String mySchedule() {
+		return schedule.mySchedule();
+	}
+	
+	public String aboutMe() {
+		return facts.aboutMe();
+	}
 }
